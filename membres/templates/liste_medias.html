@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des médias</title>
+</head>
+
+<body>
+
+    <h1>Liste des médias</h1>
+
+    <h2>Livres, DVD et CD</h2>
+
+    {% for media in medias %}
+
+        <div>
+
+            <h3>{{ media.titre }}</h3>
+
+            {% if media.livre %}
+
+                <p>Type : Livre</p>
+                <p>Auteur : {{ media.livre.auteur }}</p>
+
+            {% elif media.dvd %}
+
+                <p>Type : DVD</p>
+                <p>Réalisateur : {{ media.dvd.realisateur }}</p>
+
+            {% elif media.cd %}
+
+                <p>Type : CD</p>
+                <p>Artiste : {{ media.cd.artiste }}</p>
+
+            {% endif %}
+
+            {% if media.disponible %}
+                <p>Disponible à l'emprunt</p>
+            {% else %}
+                <p>Actuellement emprunté</p>
+            {% endif %}
+
+        </div>
+
+    {% empty %}
+
+        <p>Aucun livre, DVD ou CD disponible.</p>
+
+    {% endfor %}
+
+
+    <h2>Jeux de plateau</h2>
+
+    {% for jeu in jeux %}
+
+        <div>
+
+            <h3>{{ jeu.nom }}</h3>
+
+            <p>Type : Jeu de plateau</p>
+
+            <p>Créateur : {{ jeu.createur }}</p>
+
+            <p>
+                Disponible uniquement à la consultation
+            </p>
+
+        </div>
+
+    {% empty %}
+
+        <p>Aucun jeu de plateau disponible.</p>
+
+    {% endfor %}
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des membres</title>
+</head>
+
+<body>
+
+    <h1>Liste des membres</h1>
+
+  {% for membre in membres %}
+
+    <p>
+        {{ membre.nom }}
+
+        <a href="{% url 'modifier_membre' membre.id %}">
+            Modifier
+        </a>
+         <a href="{% url 'supprimer_membre' membre.id %}">
+            Supprimer
+        </a>
+    </p>
+
+{% empty %}
+
+    <p>Aucun membre enregistré.</p>
+
+{% endfor %}
+
+</body>
+
+</html>

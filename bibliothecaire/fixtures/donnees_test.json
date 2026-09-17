@@ -1,0 +1,69 @@
+[
+    {
+        "model": "bibliothecaire.membre",
+        "pk": 1,
+        "fields": {
+            "nom": "Jean Dupont"
+        }
+    },
+    {
+        "model": "bibliothecaire.membre",
+        "pk": 2,
+        "fields": {
+            "nom": "Marie Martin"
+        }
+    },
+    {
+        "model": "bibliothecaire.media",
+        "pk": 1,
+        "fields": {
+            "titre": "Le Petit Prince",
+            "disponible": true
+        }
+    },
+    {
+        "model": "bibliothecaire.livre",
+        "pk": 1,
+        "fields": {
+            "auteur": "Antoine de Saint-Exupéry"
+        }
+    },
+    {
+        "model": "bibliothecaire.media",
+        "pk": 2,
+        "fields": {
+            "titre": "Matrix",
+            "disponible": true
+        }
+    },
+    {
+        "model": "bibliothecaire.dvd",
+        "pk": 2,
+        "fields": {
+            "realisateur": "Wachowski"
+        }
+    },
+    {
+        "model": "bibliothecaire.media",
+        "pk": 3,
+        "fields": {
+            "titre": "Thriller",
+            "disponible": true
+        }
+    },
+    {
+        "model": "bibliothecaire.cd",
+        "pk": 3,
+        "fields": {
+            "artiste": "Michael Jackson"
+        }
+    },
+    {
+        "model": "bibliothecaire.jeudeplateau",
+        "pk": 1,
+        "fields": {
+            "nom": "Catan",
+            "createur": "Klaus Teuber"
+        }
+    }
+]

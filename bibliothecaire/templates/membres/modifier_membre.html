@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier un membre</title>
+</head>
+
+<body>
+
+    <h1>Modifier un membre</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Enregistrer les modifications
+        </button>
+
+    </form>
+
+</body>
+
+</html>

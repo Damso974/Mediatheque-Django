@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Choisir un type de média</title>
+</head>
+
+<body>
+
+    <h1>Ajouter un média</h1>
+
+    <p>Quel type de média souhaitez-vous ajouter ?</p>
+
+    <ul>
+        <li>
+            <a href="{% url 'creer_media' %}?type=livre">
+                Livre
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'creer_media' %}?type=dvd">
+                DVD
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'creer_media' %}?type=cd">
+                CD
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'creer_media' %}?type=jeu">
+                Jeu de plateau
+            </a>
+        </li>
+    </ul>
+
+    <a href="{% url 'liste_medias_bibliothecaire' %}">
+        Retour à la liste
+    </a>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un emprunt</title>
+</head>
+
+<body>
+
+  <h1>Créer un emprunt</h1>
+
+{% if message_erreur %}
+
+    <p>
+        {{ message_erreur }}
+    </p>
+
+{% endif %}
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Créer l'emprunt
+    </button>
+
+</form>
+
+</body>
+
+</html>

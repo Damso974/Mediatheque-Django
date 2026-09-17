@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier un média</title>
+</head>
+
+<body>
+
+    <h1>Modifier le média</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Enregistrer
+        </button>
+
+    </form>
+
+    <a href="{% url 'liste_medias_bibliothecaire' %}">
+        Annuler
+    </a>
+
+</body>
+
+</html>

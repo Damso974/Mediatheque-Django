@@ -1,0 +1,17 @@
+# Environnement virtuel
+venv_Mediatheque-Django/
+venv/
+
+# Base de données locale
+db.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Variables d'environnement
+.env
+
+# IDE
+.idea/
+.vscode/

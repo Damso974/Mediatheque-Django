@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des médias</title>
+</head>
+
+<body>
+
+    <h1>Gestion des médias</h1>
+
+    <a href="{% url 'creer_media' %}">
+        Ajouter un média
+    </a>
+
+    <h2>Livres, DVD et CD</h2>
+
+    {% for media in medias %}
+
+        <div>
+
+            <h3>{{ media.titre }}</h3>
+
+            {% if media.livre %}
+
+                <p>Type : Livre</p>
+                <p>Auteur : {{ media.livre.auteur }}</p>
+
+            {% elif media.dvd %}
+
+                <p>Type : DVD</p>
+                <p>Réalisateur : {{ media.dvd.realisateur }}</p>
+
+            {% elif media.cd %}
+
+                <p>Type : CD</p>
+                <p>Artiste : {{ media.cd.artiste }}</p>
+
+            {% endif %}
+
+            {% if media.disponible %}
+                <p>Disponible</p>
+            {% else %}
+                <p>Emprunté</p>
+            {% endif %}
+
+            <a href="{% url 'modifier_media' media.id %}">
+                Modifier
+            </a>
+
+            <a href="{% url 'supprimer_media' media.id %}">
+                Supprimer
+            </a>
+
+        </div>
+
+    {% empty %}
+
+        <p>Aucun livre, DVD ou CD enregistré.</p>
+
+    {% endfor %}
+
+
+    <h2>Jeux de plateau</h2>
+
+    {% for jeu in jeux %}
+
+        <div>
+
+            <h3>{{ jeu.nom }}</h3>
+
+            <p>Type : Jeu de plateau</p>
+
+            <p>Créateur : {{ jeu.createur }}</p>
+
+            <p>Consultation uniquement - Non empruntable</p>
+
+        </div>
+
+    {% empty %}
+
+        <p>Aucun jeu de plateau enregistré.</p>
+
+    {% endfor %}
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Emprunts en cours</title>
+</head>
+
+<body>
+
+```
+<h1>Emprunts en cours</h1>
+
+{% for emprunt in emprunts %}
+
+    <div>
+        <p>Membre : {{ emprunt.membre }}</p>
+
+        <p>Média : {{ emprunt.media }}</p>
+
+        <p>
+            Date d'emprunt :
+            {{ emprunt.date_emprunt }}
+        </p>
+
+        <p>
+            À retourner avant le :
+            {{ emprunt.date_limite }}
+        </p>
+
+        {% if emprunt.est_en_retard %}
+
+            <p>
+                <strong>EN RETARD</strong>
+            </p>
+
+        {% endif %}
+
+        <a href="{% url 'retourner_emprunt' emprunt.id %}">
+            Retourner
+        </a>
+    </div>
+
+{% empty %}
+
+    <p>Aucun emprunt en cours.</p>
+
+{% endfor %}
+```
+
+</body>
+
+</html>
